@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # @badt4ste
+# Usage: ./nslookup.sh targets.txt outfile.txt
 
 # Check if correct number of arguments is provided
 if [ "$#" -ne 2 ]; then
@@ -24,8 +25,8 @@ while IFS= read -r url || [ -n "$url" ]; do
         continue
     fi
 
-    echo "🔍 Performing nslookup for: $url"
-    echo "🔍 Performing nslookup for: $url" >> "$OUTPUT_FILE"
+    echo "Performing nslookup for: $url"
+    echo "Performing nslookup for: $url" >> "$OUTPUT_FILE"
 
     # Run nslookup and append to output file
     nslookup "$url" >> "$OUTPUT_FILE" 2>&1
